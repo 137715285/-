@@ -1,0 +1,97 @@
+10，数据类型
+	字符串 - char varchar(lenght) - string
+	整数 - int - int
+	小数 - float -float
+	日期时间 - data - DataTime
+	
+	Primary Key  
+	Unique Key 
+	Not Null
+	auto_increment 
+	Default 默认值可以为NULL
+		
+11, MySQL控制台
+	help；
+	show databases;
+	use databaseX;
+	show tables;
+	create database XXX;
+	drop database XXX;
+	select *from tablename;
+	
+12, MySQL workbench  全面功能学习
+       
+	 添加表
+	 添加数据
+	 数据的查询
+	 数据的更改
+	 数据的提交
+	 添加数据
+	 修改表结构 查看表结构 
+
+13， select column_list
+		from table_name
+		where filter_condition
+		order by column_list (desc)
+		limit rom_limit;
+		
+		多表联查
+	--多表多条件
+	 select a.id,a.name,b.name,c.name,a.table2_id,a.table3_id,c.table2_id
+		from table1 a,table2 b,table3 c
+		where a.table2_id=b.id and a.table3_id=c.id and b.id=c.table2_id
+		order by a.id;
+	--inner join de 多表无限联查	（适用于左、右外连接）
+	 select * 
+	 from 主表 inner join 从表 
+	 on 主表和从表关系 
+	 inner join 其他从表
+	 on 主表或从表 和 其他从表的关系
+	 --（on 后可以加多条件， 用and连接）
+	 
+		
+	--inner join内连接 
+	 select 列名 from 主表 inner join 从表
+     on 主表和从表关系
+  注意：
+       (1)必须要有on语句
+       (2)关系必须两表中都成立
+        主表和从表：
+            特点：结果是两表之间的公共数据
+            公共数据就是说两表中关系列的值要对应
+        比如：
+
+           SELECT * from  AAA INNER JOIN BBB ON AAA."id"=BBB."id"
+
+          查询显示：
+		[只显示条件都成立的数据]
+		
+	limit;
+	where;
+	order by  column_list  默认顺序
+	order by  column_list desc     倒序
+	order by column_list desc limit 1;   倒序后第一个
+	
+		
+22,创建表
+	create table tablename(
+		col_name type not null auto_increment,
+		col_name type default,
+		primary key(col_name)
+	);
+	desc tablename;查看表结构
+	插入表
+	insert into tablename(col_name,col_name,col_name)
+	values(value1,value2,value3);
+
+	更新数据
+	update tablename
+	set col_name = value,
+		col_name = value
+	where condition;
+	
+	删除数据
+	delete from tablename where condition;
+	
+	
+	
